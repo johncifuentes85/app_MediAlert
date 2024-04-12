@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/et_background</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item> <!-- Centrado vertical del texto -->
+    </style>
+</resources>

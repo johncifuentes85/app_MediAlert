@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">app_MediAlert</string>
+    <string name="logo_text">Logo</string>
+    <string name="btIngress">Ingresar</string>
+    <string name="passwd">Ingrese su contraseña</string>
+    <string name="id">Identificacion</string>
+    <string name="register">Registrate!</string>
+    <string name="title">Formulario de Registro</string>
+    <string name="name">Nombres y Apellidos</string>
+    <string name="f1">Perfil</string>
+    <string name="f2">Image</string>
+    <string name="f3">Video</string>
+    <string name="f4">Web</string>
+    <string name="f5">Alert</string>
+</resources>
