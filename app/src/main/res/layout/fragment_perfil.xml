@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".Perfil_Fragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:src="@drawable/medicalert" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/f1"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etId"
+            style="@style/EditText"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="id"
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/id"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0C0C0C" />
+
+        <EditText
+            android:id="@+id/etNamep"
+            style="@style/EditText"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="id"
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0C0C0C" />
+
+
+        <EditText
+            android:id="@+id/etDateN"
+            style="@style/EditText"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="id"
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/dateN"
+            android:inputType="date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0C0C0C" />
+
+        <EditText
+            android:id="@+id/eteps"
+            style="@style/EditText"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="password"
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/eps"
+            android:inputType="numberPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0C0C0C" />
+
+        <EditText
+            android:id="@+id/etPass"
+            style="@style/EditText"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:autofillHints="password"
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/passwd"
+            android:inputType="numberPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0C0C0C" />
+
+        <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#D6731C"
+            android:text="@string/save"
+            android:textColor="#FBF9F9"
+            android:textSize="26sp" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageButton
 import android.widget.Toast
 
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.view.View
+
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,39 +24,63 @@ class MenuActivity : AppCompatActivity() {
         val ibAlert = findViewById<ImageButton>(R.id.ibAlert)
 
         ibPerfil.setOnClickListener {
-            // Mostrar un mensaje Toast cuando se hace clic en el ImageButton
-            Toast.makeText(this, "¡Has hecho clic en perfil!", Toast.LENGTH_SHORT).show()
+            // Crea una instancia del fragmento
+            val fragment = Perfil_Fragment()
+
+            // Inicia la transacción para agregar el fragmento al layout
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.layoutInfo, fragment) // Reemplaza el contenido del layout con el fragmento
+                .addToBackStack(null) // Opcional: agrega la transacción a la pila de retroceso
+                .commit()
         }
 
         ibImage.setOnClickListener {
-            // Mostrar un mensaje Toast cuando se hace clic en el ImageButton
-            Toast.makeText(this, "¡Has hecho clic en imagenes!", Toast.LENGTH_SHORT).show()
-        }
+            // Crea una instancia del fragmento
+            val fragment = Image_Fragment()
 
-        ibVideo.setOnClickListener {
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-
-            val fragment = Video_Fragment()
-            fragmentTransaction.replace(R.id.layoutInfo, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-            Toast.makeText(this, "¡Has hecho clic en video!", Toast.LENGTH_SHORT).show()
-        }
-
-        ibWeb.setOnClickListener {
-            // Mostrar un mensaje Toast cuando se hace clic en el ImageButton
-            Toast.makeText(this, "¡Has hecho clic en web!", Toast.LENGTH_SHORT).show()
+            // Inicia la transacción para agregar el fragmento al layout
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.layoutInfo, fragment) // Reemplaza el contenido del layout con el fragmento
+                .addToBackStack(null) // Opcional: agrega la transacción a la pila de retroceso
+                .commit()
         }
 
         ibAlert.setOnClickListener {
-            // Mostrar un mensaje Toast cuando se hace clic en el ImageButton
-            Toast.makeText(this, "¡Has hecho clic en alerta!", Toast.LENGTH_SHORT).show()
+            // Crea una instancia del fragmento
+            val fragment = Alert_Fragment()
+
+            // Inicia la transacción para agregar el fragmento al layout
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.layoutInfo, fragment) // Reemplaza el contenido del layout con el fragmento
+                .addToBackStack(null) // Opcional: agrega la transacción a la pila de retroceso
+                .commit()
         }
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+
+        ibVideo.setOnClickListener {
+            // Crea una instancia del fragmento
+            val fragment = Video_Fragment()
+
+            // Inicia la transacción para agregar el fragmento al layout
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.layoutInfo, fragment) // Reemplaza el contenido del layout con el fragmento
+                .addToBackStack(null) // Opcional: agrega la transacción a la pila de retroceso
+                .commit()
+        }
+
+        ibWeb.setOnClickListener {
+            // Crea una instancia del fragmento
+            val fragment = Web_Fragment()
+
+            // Inicia la transacción para agregar el fragmento al layout
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.layoutInfo, fragment) // Reemplaza el contenido del layout con el fragmento
+                .addToBackStack(null) // Opcional: agrega la transacción a la pila de retroceso
+                .commit()
+        }
+
+
+
+
+
     }
 }
