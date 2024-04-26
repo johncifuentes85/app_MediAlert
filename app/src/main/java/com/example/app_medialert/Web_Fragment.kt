@@ -1,59 +1,49 @@
 package com.example.app_medialert
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.SearchView
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Web_Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Web_Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var webView: WebView
+    private lateinit var searchView: SearchView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_web, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_web, container, false)
+        // Inicializar el WebView
+        webView = view.findViewById(R.id.webView)
+        // Habilitar la navegación dentro del WebView
+        webView.webViewClient = WebViewClient()
+        // Inicializar el SearchView
+        searchView = view.findViewById(R.id.searchView)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Web_Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Web_Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        // Agregar un Listener al SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Cuando se envía la consulta de búsqueda
+                query?.let {
+                    val url = "https://www.google.com/search?q=$it"
+                    webView.loadUrl(url)
                 }
+                return true
             }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Manejar cambios en el texto de búsqueda si es necesario
+                return false
+            }
+        })
+        return view
     }
 }
+

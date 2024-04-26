@@ -17,6 +17,7 @@ class MenuActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu)
 
+
         val ibPerfil = findViewById<ImageButton>(R.id.ibPerfil)
         val ibImage = findViewById<ImageButton>(R.id.ibImage)
         val ibVideo = findViewById<ImageButton>(R.id.ibVideo)

@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         etPass = findViewById(R.id.etPass)
         btnEnter = findViewById(R.id.btnEnter)
 
+
         btnEnter.setOnClickListener {
             val id = etId.text.toString()
             val pass = etPass.text.toString()
